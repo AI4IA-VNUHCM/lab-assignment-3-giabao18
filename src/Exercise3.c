@@ -44,10 +44,10 @@ void Ex3(int in_arr[], int n)
 	int max2 = 1, len2 = 1;
 	for (int i = 1; i < n - 1; i++)
 	{
-		if (in_arr[i] < in_arr[i - 1])
+		if (in_arr[i] > in_arr[i + 1])
 			len2++;
 		else
-		{ // 2 5 3 4 8 9 7 6 10
+		{ // 2 5 3 4 8 9 8 2
 			if (max2 < len2)
 			{
 				max2 = len2;
@@ -58,11 +58,11 @@ void Ex3(int in_arr[], int n)
 		if (max2 < len2)
 		{
 			max2 = len2;
-			lc2 = i;
+			lc2 = i + 1;
 		}
 	}
 	printf(" Decreasing");
-	for (int i = lc2 - max2 + 1; i < lc2 + 1; i++)
+	for (int i = lc2 - max2 + 1; i <= lc2; i++)
 	{
 		printf(" %d", in_arr[i]);
 	}
