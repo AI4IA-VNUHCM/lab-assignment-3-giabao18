@@ -21,9 +21,7 @@ int Ex4(int arr[], int n)
 		{
 			count++;
 		}
-		else
-			return 0;
-	}
+		}
 	if (count == 0)
 	{
 		return 1;
@@ -39,6 +37,8 @@ int Ex4(int arr[], int n)
 	{
 		return 1;
 	}
+	else
+		return 0;
 }
 
 int main(int argc, char *argv[])
