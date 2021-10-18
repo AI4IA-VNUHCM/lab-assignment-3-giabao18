@@ -12,19 +12,45 @@ ______________________________________
 #include <stdlib.h>
 #include <math.h>
 
-int Ex4(int arr[], int n){
-	//Your codes here
-	
+int Ex4(int arr[], int n)
+{
+	int count = 0;
+	for (int i = 0; i < n - 1; i++)
+	{
+		if (!((arr[i] < arr[i + 1]) || (arr[i] == arr[i + 1])))
+		{
+			count++;
+		}
+		}
+	if (count == 0)
+	{
+		return 1;
+	}
+	for (int i = 0; i < n - 1; i++)
+	{
+		if (!((arr[i] > arr[i + 1]) || (arr[i] == arr[i + 1])))
+		{
+			count++;
+		}
+	}
+	if (count == 0)
+	{
+		return 1;
+	}
+	else
+		return 0;
 }
 
-int main(int argc, char *argv[]) {
-	//testing variable, applying it to your algorithm for auto-evaluating
+int main(int argc, char *argv[])
+{
+	// testing variable, applying it to your algorithm for auto-evaluating
 	argc--;
-	int testcase[argc],i;
-	for(i=0; i<argc;i++){
-		testcase[i] = atoi(argv[i+1]);
+	int testcase[argc], i;
+	for (i = 0; i < argc; i++)
+	{
+		testcase[i] = atoi(argv[i + 1]);
 	}
-	
+
 	printf("%d", Ex4(testcase, argc));
 
 	return 0;
