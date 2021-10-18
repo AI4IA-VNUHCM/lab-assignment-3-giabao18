@@ -12,20 +12,39 @@ Ex:
 #include <stdlib.h>
 #include <math.h>
 
-void Ex3(int in_arr[], int n){
-	//Your codes here
-	
+void Ex3(int in_arr[], int n)
+{
+	// Your codes here
+	int max = 1, len = 1, lc;
+	for (int i = 1; i < n - 1; i++)
+	{
+		if (in_arr[i] > in_arr[i - 1])
+			len++;
+		else
+		{
+			if (max < len)
+			{
+				max = len;
+				lc = i;
+			}
+			len = 1;
+		}
+		if (max < len)
+			max = len;
+	}
 }
 
-int main(int argc, char *argv[]) {
-	//testing variable, applying it to your algorithm for auto-evaluating
+int main(int argc, char *argv[])
+{
+	// testing variable, applying it to your algorithm for auto-evaluating
 	argc--;
-	int testcase[argc],i;
-	for(i=0; i<argc;i++){
-		testcase[i] = atoi(argv[i+1]);
+	int testcase[argc], i;
+	for (i = 0; i < argc; i++)
+	{
+		testcase[i] = atoi(argv[i + 1]);
 	}
-	
+
 	Ex3(testcase, argc);
-	
+
 	return 0;
 }
