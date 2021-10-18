@@ -22,6 +22,8 @@ void Ex1(int arr[], int n)
 	}
 	if (count == 0)
 		printf("symmetric");
+	else
+		printf("asymmetric");
 }
 
 int main(int argc, char *argv[])
